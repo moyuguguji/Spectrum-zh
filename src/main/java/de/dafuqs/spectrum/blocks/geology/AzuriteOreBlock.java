@@ -4,6 +4,7 @@ import de.dafuqs.spectrum.blocks.conditional.*;
 import de.dafuqs.spectrum.helpers.*;
 import de.dafuqs.spectrum.particle.*;
 import de.dafuqs.spectrum.registries.*;
+import de.dafuqs.spectrum.sound.*;
 import net.fabricmc.api.*;
 import net.minecraft.block.*;
 import net.minecraft.client.*;
@@ -54,11 +55,12 @@ public class AzuriteOreBlock extends CloakedOreBlock {
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
         super.randomDisplayTick(state, world, pos, random);
         
-        if (this.isVisibleTo(MinecraftClient.getInstance().player) && world.getRandom().nextFloat() < 0.02) {
-            ParticleHelper.playTriangulatedParticle(world, SpectrumParticleTypes.AZURE_AURA, 8, false, new Vec3d(32, 8, 32), -12, true, Vec3d.of(pos), new Vec3d(0, 0.04D + random.nextDouble() * 0.06, 0));
-            ParticleHelper.playTriangulatedParticle(world, SpectrumParticleTypes.AZURE_AURA, 12, true, new Vec3d(32, 8, 32), -12, true, Vec3d.of(pos), new Vec3d(0, 0.04D + random.nextDouble() * 0.06, 0));
-            ParticleHelper.playTriangulatedParticle(world, SpectrumParticleTypes.AZURE_MOTE_SMALL, 19, false, new Vec3d(24, 8, 24), -8, false, Vec3d.of(pos), Vec3d.ZERO);
-            ParticleHelper.playTriangulatedParticle(world, SpectrumParticleTypes.AZURE_MOTE, 17, true, new Vec3d(24, 6, 24), -6, false, Vec3d.of(pos), Vec3d.ZERO);
+        if (this.isVisibleTo(MinecraftClient.getInstance().player)) {
+            BlockAuraSoundInstance.addToExistingInstanceOrCreateNewOne(world, pos);
+
+            if (world.getRandom().nextFloat() >= 0.02)
+                return;
+
             ParticleHelper.playTriangulatedParticle(world, SpectrumParticleTypes.AZURE_AURA, 5, false, new Vec3d(2, 0, 2), 0, true, Vec3d.of(pos), new Vec3d(0, 0.07D + random.nextDouble() * 0.06, 0));
             ParticleHelper.playParticleAroundBlockSides(world, SpectrumParticleTypes.AZURE_MOTE, Vec3d.of(pos), Direction.values(), random.nextBetween(1, 3), Vec3d.ZERO);
             world.playSound(null, pos, SpectrumSoundEvents.SOFT_HUM, SoundCategory.BLOCKS, 1F, random.nextFloat() * 0.5F + 1F);

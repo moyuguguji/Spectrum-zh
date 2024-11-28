@@ -19,7 +19,7 @@ import java.util.*;
 
 public class AetherGracedNectarGlovesItem extends AzureDikeTrinketItem implements SlotBackgroundEffectProvider {
 
-	public static final int HARMFUL_EFFECT_COST = 3;
+	public static final int HARMFUL_EFFECT_COST = 7;
 
 	public AetherGracedNectarGlovesItem(Settings settings) {
 		super(settings);
@@ -48,7 +48,7 @@ public class AetherGracedNectarGlovesItem extends AzureDikeTrinketItem implement
 		if (effect.isBeneficial())
 			return false;
 
-		if (SpectrumStatusEffectTags.isIn(SpectrumStatusEffectTags.SOPORIFIC, effect))
+		if (SpectrumStatusEffectTags.bypassesNectarGloves(effect))
 			return false;
 
 		var trinkets = TrinketsApi.getTrinketComponent(entity);

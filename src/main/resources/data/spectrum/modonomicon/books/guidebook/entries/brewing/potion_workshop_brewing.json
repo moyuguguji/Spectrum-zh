@@ -108,7 +108,8 @@
         "type": "modonomicon:advancement",
         "advancement_id": "spectrum:unlocks/potions/resistance"
       },
-      "recipe_id": "spectrum:potion_workshop_brewing/resistance"
+      "recipe_id": "spectrum:potion_workshop_brewing/resistance",
+      "text": "book.spectrum.guidebook.potion_workshop_brewing.low_potency_mod"
     },
     {
       "type": "spectrum:potion_workshop_brewing",
@@ -117,7 +118,8 @@
         "type": "modonomicon:advancement",
         "advancement_id": "spectrum:unlocks/potions/wither"
       },
-      "recipe_id": "spectrum:potion_workshop_brewing/wither"
+      "recipe_id": "spectrum:potion_workshop_brewing/wither",
+      "text": "book.spectrum.guidebook.potion_workshop_brewing.low_potency_mod"
     },
     {
       "type": "spectrum:potion_workshop_brewing",
@@ -135,7 +137,8 @@
         "type": "modonomicon:advancement",
         "advancement_id": "spectrum:unlocks/potions/toughness"
       },
-      "recipe_id": "spectrum:potion_workshop_brewing/toughness"
+      "recipe_id": "spectrum:potion_workshop_brewing/toughness",
+      "text": "book.spectrum.guidebook.potion_workshop_brewing.low_potency_mod"
     },
     {
       "type": "spectrum:potion_workshop_brewing",
@@ -180,7 +183,8 @@
         "type": "modonomicon:advancement",
         "advancement_id": "spectrum:unlocks/potions/weak_sleep_effects"
       },
-      "recipe_id": "spectrum:potion_workshop_brewing/somnolence"
+      "recipe_id": "spectrum:potion_workshop_brewing/somnolence",
+      "text": "book.spectrum.guidebook.potion_workshop_brewing.low_potency_mod"
     },
     {
       "type": "spectrum:potion_workshop_brewing",
@@ -190,7 +194,7 @@
         "advancement_id": "spectrum:unlocks/potions/strong_sleep_effects"
       },
       "recipe_id": "spectrum:potion_workshop_brewing/eternal_slumber",
-      "text": "book.spectrum.guidebook.low_yield"
+      "text": "book.spectrum.guidebook.potion_workshop_brewing.low_yield"
     },
     {
       "type": "spectrum:potion_workshop_brewing",
@@ -200,7 +204,17 @@
         "advancement_id": "spectrum:unlocks/potions/strong_sleep_effects"
       },
       "recipe_id": "spectrum:potion_workshop_brewing/fatal_slumber",
-      "text": "book.spectrum.guidebook.low_yield"
+      "text": "book.spectrum.guidebook.potion_workshop_brewing.fillable_only"
+    },
+    {
+      "type": "spectrum:potion_workshop_brewing",
+      "title": "effect.spectrum.immunity",
+      "condition": {
+        "type": "modonomicon:advancement",
+        "advancement_id": "spectrum:hidden/collect_cookbooks/poisoners_handbook"
+      },
+      "recipe_id": "spectrum:potion_workshop_brewing/immunity",
+      "text": "book.spectrum.guidebook.potion_workshop_brewing.page19.text"
     }
   ]
 }
